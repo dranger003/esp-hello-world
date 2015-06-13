@@ -7,6 +7,8 @@
 //Main Timer
 static volatile os_timer_t main_timer;
 
+void user_rf_pre_init() { }
+
 void loop(void *arg) {
 	char c;
 	while (Serial.available() > 0) {

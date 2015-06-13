@@ -12,10 +12,10 @@ BUILD_BASE	= build
 FW_BASE		= firmware
 
 # Base directory for the compiler
-XTENSA_TOOLS_ROOT ?= /opt/Espressif/xtensa-lx106-elf/bin/
+XTENSA_TOOLS_ROOT ?= ../../arduino-1.6.5/hardware/esp8266com/esp8266/tools/xtensa-lx106-elf/bin/
 
 # base directory of the ESP8266 SDK package, absolute
-SDK_BASE	?= /opt/Espressif/sdk/
+SDK_BASE	?= ../esp_iot_sdk_v1.1.2/
 
 #Esptool.py path and port
 ESPTOOL		?= esptool.py
@@ -26,7 +26,7 @@ TARGET		= app
 
 # which modules (subdirectories) of the project to include in compiling
 MODULES			= user driver driver/arduino
-EXTRA_INCDIR    = include include/driver include/driver/arduino /opt/Espressif/sdk/
+EXTRA_INCDIR    = include include/driver include/driver/arduino ../esp_iot_sdk_v1.1.2/sdk/
 
 # libraries used in this project, mainly provided by the SDK
 LIBS		= c gcc hal pp phy net80211 lwip wpa main
@@ -62,7 +62,7 @@ LD		:= $(XTENSA_TOOLS_ROOT)/xtensa-lx106-elf-gcc
 ####
 #### no user configurable options below here
 ####
-FW_TOOL		?= /usr/bin/esptool
+FW_TOOL		?= ../../arduino-1.6.5/hardware/esp8266com/esp8266/tools/esptool
 SRC_DIR		:= $(MODULES)
 BUILD_DIR	:= $(addprefix $(BUILD_BASE)/,$(MODULES))
 
